@@ -4,7 +4,7 @@ class CreateIngredients < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :price
       t.references :buyer, foreign_key: true
-      t.references :recipe, foreign_key: true
+      t.references :list, foreign_key: true
 
       t.timestamps
     end
