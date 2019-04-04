@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get "lists", to: "lists#index"
-  get "lists/:id", to: "lists#show"
+  get "lists/:id", to: "lists#show", as: "list"
 
 
 
