@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_103033) do
+ActiveRecord::Schema.define(version: 2019_04_03_105620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,14 +25,15 @@ ActiveRecord::Schema.define(version: 2019_04_03_103033) do
     t.string "name"
     t.integer "price"
     t.bigint "buyer_id"
-    t.bigint "recipe_id"
+    t.bigint "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "bought"
     t.index ["buyer_id"], name: "index_ingredients_on_buyer_id"
-    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
+    t.index ["list_id"], name: "index_ingredients_on_list_id"
   end
 
-  create_table "recipes", force: :cascade do |t|
+  create_table "lists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,5 +52,5 @@ ActiveRecord::Schema.define(version: 2019_04_03_103033) do
   end
 
   add_foreign_key "ingredients", "buyers"
-  add_foreign_key "ingredients", "recipes"
+  add_foreign_key "ingredients", "lists"
 end

@@ -1,0 +1,22 @@
+.list-index{
+  margin: 20px 40px;
+  .btn{
+    background-color: #F5F5F5 !important;
+    border: 1px solid #808080;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 5px;
+    a{
+      color:  #808080 !important;
+      &:hover{
+        color: black !important ;
+        text-decoration: none !important;
+      }
+      p{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
