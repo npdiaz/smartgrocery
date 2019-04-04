@@ -1,10 +1,10 @@
 class ListsController < ApplicationController
   def index
-    @list = List.all
+    @lists = List.all
   end
 
   def show
-    @list = List.find(params[:id])
+    @list = List.find(params[:list_id])
     @ingredients = @list.ingredients
   end
 
@@ -13,9 +13,30 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list =
+    @list = List.new(list_params)
+    @list.user = current_user
+    if @list.save
+      redirect_to list_path(@list), notice: 'New list added'
+    else
+      render :new
+    end
+    @list.save
   end
 
+  def edit
+    @list = List.find(params[:id])
+    @list.user = current_user
+  end
+
+  def update
+    @list = List.find(params[:id])
+    @list.update(params[:list])
+    if @list.update(list_params)
+      redirect_to list_path(@list), notice: 'List updated'
+    else
+      render :edit
+    end
+  end
 
   def list_params
     params.require(:list).permit(:name, :list_id, :ingredient)

@@ -1,3 +1,11 @@
+<h2>Your lists</h2>
+
 <% @lists.each do |list| %>
   <h2><%= list.name %></h2>
 <% end %>
+
+<div class="btn btn-primary">
+  <%= link_to new_list_path do %>
+    <p> new list</p>
+  <% end %>
+</div>
