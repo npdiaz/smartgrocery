@@ -1,15 +1,12 @@
 <h2> Create a list </h2>
 
-<%= form_for(@list, url: list_path(@list)) do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
+<%= simple_form_for(@list) do |f| %>
+      <%= f.input :name, label: 'Name your list', input_html: { style: "display: none;"} %>
+      <%= f.input :name, placeholder: 'e.g. My birthday lunch', label: false, input_html: { id: "nameInput", class: "hidden" } %>
 
-  <div class="form-group">
-    <%= f.label :ingredient %>
-    <%= f.text_field :ingredient, class: 'form-control' %>
-  </div>
+    <div class = "form-action form-container">
+      <%= f.button :submit, class: 'btn btn-primary form', id: 'back' %>
+    </div>
 
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+  <% end %>
+
