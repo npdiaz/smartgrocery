@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   def index
-    @ingredient = Ingredient.all
+    @ingredients = Ingredients.all
   end
 
   def show
@@ -8,14 +8,14 @@ class IngredientsController < ApplicationController
   end
 
   def new
-    @list = List.find([list_id])
+    # we need @list in our `simple_form_for`
     @ingredient = Ingredient.new
   end
 
   def create
-    @list = List.find([list_id])
     @ingredient = Ingredient.new(ingredient_params)
-    @ingredient.user = current_user
+    # we need `list_id` to asssociate ingredient with corresponding list
+    @ingredient.list = @list
     if @ingredient.save
       redirect_to list_path(@list), notice: 'New ingredient added'
     else
@@ -23,7 +23,13 @@ class IngredientsController < ApplicationController
     end
   end
 
+  private
+
+  def set_list
+    @list = List.find(params[:list_id])
+  end
+
   def ingredient_params
-    params.require(:ingredient).permit(:name, :price, :buyer_id)
+    params.require(:ingredient).permit(:name, :price, :list_id, :buyer_id)
   end
 end

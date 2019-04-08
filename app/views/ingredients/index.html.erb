@@ -1,0 +1,11 @@
+<h2 class="text-center">All your ingredients</h2>
+
+<div class="contaier">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <% @lists.each do |li| %>
+        <%= li.ingredient.name %>
+      <% end %>
+    </div>
+  </div>
+</div>
