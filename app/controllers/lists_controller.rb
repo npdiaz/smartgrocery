@@ -6,7 +6,6 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @ingredient = Ingredient.new
-
   end
 
   def new
@@ -39,8 +38,8 @@ class ListsController < ApplicationController
   end
 
   private
+
   def list_params
     params.require(:list).permit(:name, :list_id, :ingredients)
   end
-
 end
