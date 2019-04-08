@@ -1,6 +1,14 @@
 class IngredientsController < ApplicationController
+  def bought
+    @bought_ingredients = Ingredient.where(bought: true)
+  end
+
   def index
-    @ingredients = Ingredients.all
+    if params[:list_id]
+      @ingredients = List.find(params[:list_id]).includes(:lists).ingredients
+    else
+      @ingredients = Ingredient.all
+    end
   end
 
   def show
@@ -22,6 +30,20 @@ class IngredientsController < ApplicationController
       render :new
     end
   end
+
+  # def edit
+  #   @list = List.find(params[:id])
+  # end
+
+  # def update
+  #   @list = List.find(params[:id])
+  #   @list.update(params[:list])
+  #   if @list.update(list_params)
+  #     redirect_to list_path(@list), notice: 'List updated'
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   private
 
