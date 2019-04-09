@@ -25,6 +25,10 @@ class IngredientsController < ApplicationController
 
   private
 
+  def set_ingredient
+    @ingredient = Ingredient.find(params[:ingredient_id])
+  end
+
   def set_list
     @list = List.find(params[:list_id])
   end
