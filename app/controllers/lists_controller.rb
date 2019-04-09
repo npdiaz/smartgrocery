@@ -19,7 +19,6 @@ class ListsController < ApplicationController
     else
       render :new
     end
-    @list.save
   end
 
   def edit

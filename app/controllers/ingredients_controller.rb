@@ -16,18 +16,20 @@ class IngredientsController < ApplicationController
   end
 
   def new
+    @list = List.find(params[:list_id])
     # we need @list in our `simple_form_for`
     @ingredient = Ingredient.new
   end
 
   def create
+    @list = List.find(params[:list_id])
     @ingredient = Ingredient.new(ingredient_params)
-    # we need `list_id` to asssociate ingredient with corresponding list
     @ingredient.list = @list
-    if @ingredient.save
+    # we need `list_id` to asssociate ingredient with corresponding list
+    if @ingredient.save!
       redirect_to list_path(@list), notice: 'New ingredient added'
     else
-      render :new
+      @message = "error sorry"
     end
   end
 

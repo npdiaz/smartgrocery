@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   get "/recipes", to: 'pages#recipes'
 
   resources :lists do
+    resources :ingredients, only: [:index, :new, :create, :edit ]
     collection do
       get "bought", to: "ingredients#bought"
     end
-    resources :ingredients, only: [:index, :new, :create, :edit ]
   end
+
 end

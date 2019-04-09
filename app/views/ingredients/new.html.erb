@@ -1,16 +1,16 @@
 <div class="content">
   <h2 class="text-center">Add a new igredient</h2>
 
-  <div class="contaier">
+  <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
-          <%= simple_form_for [@list, @ingredient] do |f| %>
-            <%= f.input :name, placeholder: "carrots" %>
-            <%= f.submit "add an ingredient", class: "btn btn-primary" %>
-          <% end %>
-
+          <%= render 'form', ingredient: @ingredient %>
+        </div>
       </div>
     </div>
   </div>
+
+  <%= link_to list_path(@list) do %>
+    <i class="fas fa-undo-alt"></i> Back to list
+    <% end %>
 </div>

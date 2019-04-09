@@ -9,10 +9,16 @@
   <% end %>
   </ul>
 
-  <div class="btn btn-primary">
+<!--   <div class="btn btn-primary">
     <%= link_to new_list_ingredient_path(@list) do %>
-      <p> Add an igredient</p>
+      <p> Add an ingredient</p>
     <% end %>
-  </div>
+  </div> -->
 
+  <br>
+  <br>
+
+  <div>
+    <%= render 'ingredients/form' %>
+  </div>
 </div>
