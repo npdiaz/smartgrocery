@@ -1,18 +1,38 @@
-<div class="content">
+<div class="content show">
   <h2>
     <%= @list.name %>
   </h2>
 
   <ul>
-  <% @list.ingredients.each do |ingredient| %>
-    <li><%= ingredient.name %></li>
-  <% end %>
+    <% if @ingredient.bought == false %>
+      <h4>To buy</h4>
+      <% @list.ingredients.each do |ingredient| %>
+      <div class="each-ing">
+        <li style="list-style-type:none;"><span class="item-tobuy"><%= ingredient.name %></span>&nbsp;&nbsp;<i class="far fa-square box"></i></li>
+      </div>
+      <% end %>
+    <% else %>
+      <h4>Completed</h4>
+      <% @list.ingredients.each do |ingredient| %>
+      <div class="each-ing">
+        <li style="list-style-type:none;"><span class="item-bought"><%= ingredient.name %></span>&nbsp;&nbsp;<i class="far fa-check-square box"></i></li>
+      </div>
+      <% end %>
+    <% end %>
   </ul>
 
-  <div class="btn btn-primary">
-    <%= link_to new_list_ingredient_path(@list) do %>
-      <p> Add an igredient</p>
-    <% end %>
-  </div>
 
+  <br>
+  <br>
+
+  <div>
+    <%= render 'ingredients/form' %>
+  </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+

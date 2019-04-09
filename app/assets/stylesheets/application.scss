@@ -15,10 +15,13 @@
 body{
   background-color: white;
   position: relative;
-  height: 100vh;
 
 }
 
 .content{
-  margin: 20px 40px;
+  margin: 20px 40px;;
+}
+
+.content ul {
+  margin-left: -40px;
 }

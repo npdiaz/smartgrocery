@@ -1,0 +1,6 @@
+<%= simple_form_for [@list, @ingredient] do |f| %>
+
+  <%= f.input :name, placeholder: "carrots", label: "Add  ingredient"  %>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
+
