@@ -24,7 +24,6 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
-    @list.user = current_user
   end
 
   def update

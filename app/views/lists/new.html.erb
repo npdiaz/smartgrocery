@@ -1,10 +1,14 @@
-<h2> Create a list </h2>
+<div class="content">
 
-<%= simple_form_for (@list) do |f| %>
-  <%= f.error_notification %>
+  <h2> Create a list </h2>
 
-  <%= f.input :name, label: 'Name your list', input_html: { style: "display: none;"} %>
-  <%= f.input :name, placeholder: 'e.g. Birthday lunch', label: false, input_html: { id: "nameInput", class: "hidden" } %>
+  <%= simple_form_for (@list) do |f| %>
+    <%= f.error_notification %>
 
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+    <%= f.input :name, label: 'Name your list', input_html: { style: "display: none;"} %>
+    <%= f.input :name, placeholder: 'e.g. Birthday lunch', label: false, input_html: { id: "nameInput", class: "hidden"  } %>
+
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+
+</div>

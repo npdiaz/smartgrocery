@@ -1,0 +1,11 @@
+<div class="content">
+
+  <h2>Items you bought</h2>
+
+  <ul>
+    <% @bought_ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+    <% end %>
+  </ul>
+
+</div>

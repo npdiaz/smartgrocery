@@ -1,15 +1,18 @@
-<h2>
-  <%= @list.name %>
-</h2>
+<div class="content">
+  <h2>
+    <%= @list.name %>
+  </h2>
 
-<ul>
-<% @list.ingredients.each do |ingredient| %>
-  <li><%= ingredient.name %></li>
-<% end %>
-</ul>
+  <ul>
+  <% @list.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+  <% end %>
+  </ul>
 
-<div class="btn btn-primary">
+  <div class="btn btn-primary">
     <%= link_to new_list_ingredient_path(@list) do %>
       <p> Add an igredient</p>
     <% end %>
   </div>
+
+</div>
