@@ -4,16 +4,19 @@
   </h2>
 
   <ul>
-  <% @list.ingredients.each do |ingredient| %>
-    <li><%= ingredient.name %></li>
-  <% end %>
+    <% if @ingredient.bought = true %>
+      <h4>To buy</h4>
+      <% @list.ingredients.each do |ingredient| %>
+        <li style="list-style-type:none;"> <i class="far fa-square"></i> &nbsp; &nbsp;<%= ingredient.name %></li>
+      <% end %>
+    <% else %>
+      <h4>completed</h4>
+      <% @list.ingredients.each do |ingredient| %>
+        <li style="list-style-type:none;"><i class="far fa-check-square"></i><%= ingredient.name %></li>
+      <% end %>
+    <% end %>
   </ul>
 
-<!--   <div class="btn btn-primary">
-    <%= link_to new_list_ingredient_path(@list) do %>
-      <p> Add an ingredient</p>
-    <% end %>
-  </div> -->
 
   <br>
   <br>
