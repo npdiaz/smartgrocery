@@ -10,8 +10,8 @@ List.destroy_all
 
 user_1 = User.create!(email: "thisemail@site.com", password: "123456")
 
-list_1 = List.create!(name:  "Christmas Dinner")
-list_2 = List.create!(name:  "New Year's Eve")
+list_1 = List.create!(name: "Christmas Dinner")
+list_2 = List.create!(name: "New Year's Eve")
 
-ingredient_1 = List.create!(name:  "Chicken", bought: false, user: user_1 )
-ingredient_2 = List.create!(name:  "Sauce", bought: false, user: user_1 )
+ingredient_1 = List.create!(name:  "Chicken")
+ingredient_2 = List.create!(name:  "Sauce")

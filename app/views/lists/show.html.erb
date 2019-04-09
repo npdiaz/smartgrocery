@@ -1,18 +1,22 @@
-<div class="content">
+<div class="content show">
   <h2>
     <%= @list.name %>
   </h2>
 
   <ul>
-    <% if @ingredient.bought = true %>
+    <% if @ingredient.bought == false %>
       <h4>To buy</h4>
       <% @list.ingredients.each do |ingredient| %>
-        <li style="list-style-type:none;"> <i class="far fa-square"></i> &nbsp; &nbsp;<%= ingredient.name %></li>
+      <div class="each-ing">
+        <li style="list-style-type:none;"><span class="item-tobuy"><%= ingredient.name %></span>&nbsp;&nbsp;<i class="far fa-square box"></i></li>
+      </div>
       <% end %>
     <% else %>
-      <h4>completed</h4>
+      <h4>Completed</h4>
       <% @list.ingredients.each do |ingredient| %>
-        <li style="list-style-type:none;"><i class="far fa-check-square"></i><%= ingredient.name %></li>
+      <div class="each-ing">
+        <li style="list-style-type:none;"><span class="item-bought"><%= ingredient.name %></span>&nbsp;&nbsp;<i class="far fa-check-square box"></i></li>
+      </div>
       <% end %>
     <% end %>
   </ul>
@@ -25,3 +29,10 @@
     <%= render 'ingredients/form' %>
   </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
