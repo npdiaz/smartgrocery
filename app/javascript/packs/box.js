@@ -9,4 +9,16 @@ function markItemAsBought() {
   )
 }
 
+
+// function markItemAsBought() {
+//   var box = document.querySelector(".box");
+//   if (box.bought.value == "false") {
+//     document.test.elements["savereport"].value = "True";
+//     //document.test.submit();
+//   } else {
+//     change.value = "true";
+//   }
+// }
+
+
 export { markItemAsBought };
