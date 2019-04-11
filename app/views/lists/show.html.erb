@@ -8,7 +8,7 @@
       <h4>To buy</h4>
       <% @list.ingredients.each do |ingredient| %>
       <div class="each-ing">
-        <li style="list-style-type:none;"><span class="item-tobuy"><%= ingredient.name %></span>&nbsp;&nbsp;<i class="far fa-square box"></i></li>
+        <li style="list-style-type:none;"><span class="item-tobuy" id="tobuy"><%= ingredient.name %></span>&nbsp;&nbsp;<i class="far fa-square box" id="square"></i></li>
       </div>
       <% end %>
     <% else %>
