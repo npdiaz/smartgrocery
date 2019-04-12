@@ -13,5 +13,5 @@ user_1 = User.create!(email: "thisemail@site.com", password: "123456")
 list_1 = List.create!(name: "Christmas Dinner")
 list_2 = List.create!(name: "New Year's Eve")
 
-ingredient_1 = List.create!(name:  "Chicken")
+ingredient_1 = List.create!(name:  "Chicken", bought: true)
 ingredient_2 = List.create!(name:  "Sauce")

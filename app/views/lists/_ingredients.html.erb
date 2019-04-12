@@ -1,0 +1,31 @@
+    <div>
+      <h4>To buy</h4>
+      <% if @ingredient.bought == false %>
+          <ul>
+            <% @list.ingredients.each do |ingredient| %>
+              <div class="each-ing">
+                <li style="list-style-type:none;">
+                  <span class="item-tobuy" id="tobuy"><%= ingredient.name %></span>&nbsp;&nbsp;
+                  <i class="far fa-square box" id="square"></i>
+                </li>
+              </div>
+            <% end %>
+          </ul>
+      <% end %>
+    </div>
+<hr>
+    <div>
+      <h6>Completed</h6>
+      <% if @ingredient.bought == true %>
+        <ul>
+        <% @list.ingredients.each do |ingredient| %>
+          <div class="each-ing">
+            <li style="list-style-type:none;">
+              <span class="item-bought"><%= ingredient.name %></span>&nbsp;&nbsp;
+              <i class="far fa-check-square box"></i>
+            </li>
+          </div>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>

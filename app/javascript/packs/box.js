@@ -1,5 +1,5 @@
 function markItemAsBought() {
-  const box = document.querySelector(".box");
+  var box = document.querySelector(".box");
   box.addEventListener('click' , (event)=> {
     const item = document.getElementById("tobuy");
     const box = document.getElementById("square")
@@ -11,12 +11,12 @@ function markItemAsBought() {
 
 
 // function markItemAsBought() {
-//   var box = document.querySelector(".box");
-//   if (box.bought.value == "false") {
-//     document.test.elements["savereport"].value = "True";
+//   var box = document.querySelector(".box").innerHTML;
+//   if (box.bought == "false") {
+//     document.test.elements["savereport"].bought = "True";
 //     //document.test.submit();
 //   } else {
-//     change.value = "true";
+//     box.bought = "true";
 //   }
 // }
 

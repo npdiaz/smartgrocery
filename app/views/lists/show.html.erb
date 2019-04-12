@@ -3,28 +3,11 @@
     <%= @list.name %>
   </h2>
 
-  <ul>
-    <% if @ingredient.bought == false %>
-      <h4>To buy</h4>
-      <% @list.ingredients.each do |ingredient| %>
-      <div class="each-ing">
-        <li style="list-style-type:none;"><span class="item-tobuy" id="tobuy"><%= ingredient.name %></span>&nbsp;&nbsp;<i class="far fa-square box" id="square"></i></li>
-      </div>
-      <% end %>
-    <% else %>
-      <h4>Completed</h4>
-      <% @list.ingredients.each do |ingredient| %>
-      <div class="each-ing">
-        <li style="list-style-type:none;"><span class="item-bought"><%= ingredient.name %></span>&nbsp;&nbsp;<i class="far fa-check-square box"></i></li>
-      </div>
-      <% end %>
-    <% end %>
-  </ul>
-
+ <%= render 'lists/ingredients' %>
 
   <br>
   <br>
-
+  <hr>
   <div>
     <%= render 'ingredients/form' %>
   </div>
