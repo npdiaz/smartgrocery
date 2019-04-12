@@ -1,12 +1,24 @@
 function markItemAsBought() {
-  const box = document.querySelector(".box");
+  var box = document.querySelector(".box");
   box.addEventListener('click' , (event)=> {
-    const item = document.querySelector(".item-tobuy");
-    const box = document.querySelector(".fa-square")
-    item.classList.add('item-tobuy', 'item-bought');
+    const item = document.getElementById("tobuy");
+    const box = document.getElementById("square")
+    item.classList.replace('item-tobuy','item-bought');
     box.classList.replace('fa-square','fa-check-square');
     }
   )
 }
+
+
+// function markItemAsBought() {
+//   var box = document.querySelector(".box").innerHTML;
+//   if (box.bought == "false") {
+//     document.test.elements["savereport"].bought = "True";
+//     //document.test.submit();
+//   } else {
+//     box.bought = "true";
+//   }
+// }
+
 
 export { markItemAsBought };
