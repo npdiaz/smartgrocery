@@ -3,7 +3,7 @@ function markItemAsBought() {
   box.addEventListener('click' , (event)=> {
     const item = document.getElementById("tobuy");
     const box = document.getElementById("square")
-    item.classList.add('item-bought');
+    item.classList.replace('item-tobuy','item-bought');
     box.classList.replace('fa-square','fa-check-square');
     }
   )

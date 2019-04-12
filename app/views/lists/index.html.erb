@@ -41,7 +41,7 @@
               <li style="list-style-type:none;">
                 <span id="tobuy" class="item-tobuy"><%= ing.name %></span>
                 <span class="definition">for (<%= list.name %>)</span> &nbsp;&nbsp;
-                <i class="far fa-square box"></i>
+                <i class="far fa-square box" id="square"></i>
               </li>
             </div>
           <% end %>
@@ -52,7 +52,7 @@
           <% if ing.bought == true %>
             <div class="each-ing">
               <li style="list-style-type:none;">
-                <span id="tobuy" class="item-tobuy"><%= ing.name %></span>
+                <span id="tobuy" class="item-bought"><%= ing.name %></span>
                 <span class="definition">for (<%= list.name %>)</span> &nbsp;&nbsp;
                 <i class="far fa-check-square box"></i>
               </li>
